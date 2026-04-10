@@ -47,16 +47,16 @@ body {
   align-items: center;
   padding: 15px 20px;
   gap: 10px;
-  flex-wrap: nowrap; /* keeps input + button on same line */
+  flex-wrap: nowrap;
 }
 
 #taskinput {
   flex: 1;
-  min-width: 0;              /* prevents overflow */
-  box-sizing: border-box;     /* padding inside width */
+  min-width: 0;
+  box-sizing: border-box;
   border-radius: 15px;
   border: 1px solid #6d7875;
-  padding: 10px 15px 10px 20px; /* extra left padding */
+  padding: 10px 15px 10px 20px;
   font-size: 14px;
 }
 
@@ -66,7 +66,7 @@ body {
 }
 
 #addbtn {
-  flex-shrink: 0; /* button won’t shrink too much */
+  flex-shrink: 0;
   border: none;
   border-radius: 15px;
   background-color: #eaddd7;
@@ -89,17 +89,47 @@ body {
   display: flex;
   align-items: center;
   margin: 10px 0;
+  gap: 10px;
 }
 
 .checkinput {
-  margin-right: 12px;
   accent-color: #82d897;
 }
 
+/* This pushes buttons to the right properly */
 .taskname {
   margin: 0;
   font-size: 16px;
-  word-break: break-word; /* long text wraps */
+  word-break: break-word;
+  flex: 1;
+}
+
+/* ========== Unified Action Buttons ========== */
+.action-btn {
+  border: none;
+  background-color: #e7fcf5;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.action-btn:hover {
+  background-color: #cce4dc;
+}
+
+.action-btn:active {
+  transform: scale(0.9);
+}
+
+/* Icon sizing (applies to both edit + delete) */
+.action-btn img {
+  width: 16px;
+  height: 16px;
 }
 
 /* ========== Responsive Design ========== */
@@ -150,22 +180,4 @@ body {
   #addbtn {
     width: 100%;
   }
-}
-
-.bin{
-  width: 1rem;
-}
-
-.rembtn{
-  border: none;
-  background-color: #e7fcf5;
-  margin-left: auto;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.rembtn:hover{
-  background-color: #cce4dc;
 }

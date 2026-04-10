@@ -86,6 +86,9 @@ function addTask() {
     e.stopPropagation(); // Prevent triggering document click
   });
 
+  rembtn.className = "action-btn";
+  editbtn.className = "action-btn";
+
   // Disable edit when clicking outside the editbtn/taskName
   document.addEventListener("mousedown", function listener(e) {
     if (taskName.isContentEditable && !editbtn.contains(e.target) && e.target !== editbtn && e.target !== taskName) {
@@ -104,4 +107,3 @@ function addTask() {
 
 }
 
-//Well well well
